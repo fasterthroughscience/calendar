@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kona House Calendar</title>
+<style>
+  :root{
+    --ink:#111111;
+    --lime:#caff00;
+    --grey:#555555;
+    --line:#e2e2e2;
+    --panel:#f7f7f7;
+    --race:#1a1a1a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#ffffff;color:var(--ink);
+    font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 16px 60px;}
+
+  .tag{display:inline-block;background:var(--lime);color:var(--ink);
+    font-weight:700;font-size:12px;letter-spacing:1.5px;padding:4px 10px;}
+  h1{font-size:38px;margin:14px 0 2px;letter-spacing:-0.5px;}
+  .sub{color:var(--grey);font-size:15px;font-weight:700;margin:0 0 6px;}
+  .loc{color:var(--grey);font-size:13px;margin:0;padding-bottom:18px;
+    border-bottom:4px solid var(--ink);}
+
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 22px;font-size:12px;color:var(--grey);}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:12px;height:12px;display:inline-block;border:1px solid var(--ink);}
+  .dot.swim{background:var(--lime);}
+  .dot.ride{background:#ffffff;}
+  .dot.social{background:var(--ink);}
+  .dot.key{background:var(--race);border:1px solid var(--lime);}
+
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+  .day{border:1px solid var(--line);min-height:230px;display:flex;flex-direction:column;}
+  .day.race{border:2px solid var(--ink);}
+  .dhead{background:var(--panel);padding:8px 10px;border-bottom:1px solid var(--line);}
+  .day.race .dhead{background:var(--race);}
+  .dname{font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;}
+  .day.race .dname{color:var(--lime);}
+  .ddate{font-size:11px;color:var(--grey);}
+  .day.race .ddate{color:#cccccc;}
+  .dbody{padding:8px;display:flex;flex-direction:column;gap:6px;flex:1;}
+
+  .ev{font-size:11.5px;line-height:1.35;padding:6px 7px;border:1px solid var(--line);}
+  .ev .t{color:var(--grey);font-size:10.5px;display:block;}
+  .ev .n{font-weight:700;}
+  .ev.swim{background:#fbffe6;border-left:4px solid var(--lime);}
+  .ev.ride{background:#ffffff;border-left:4px solid var(--ink);}
+  .ev.social{background:var(--panel);border-left:4px solid var(--grey);}
+  .ev.key{background:var(--race);color:#ffffff;border-left:4px solid var(--lime);}
+  .ev.key .t{color:#cccccc;}
+  .ev.big{background:var(--lime);border-left:4px solid var(--ink);}
+
+  .note{margin-top:26px;font-size:12px;color:var(--grey);line-height:1.6;
+    border-top:1px solid var(--line);padding-top:14px;}
+  .note b{color:var(--ink);}
+
+  @media(max-width:820px){
+    .grid{grid-template-columns:1fr;}
+    .day{min-height:0;}
+    h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tag">FASTER THROUGH SCIENCE</div>
+  <h1>Kona House &mdash; Week Calendar</h1>
+  <p class="sub">Ironman World Championship</p>
+  <p class="loc">Kona, Hawaii &nbsp;/&nbsp; Mon 5 Oct &ndash; Sun 11 Oct 2026 &nbsp;/&nbsp; Race day Sat 10 Oct</p>
+
+  <div class="legend">
+    <span><i class="dot swim"></i> Swim</span>
+    <span><i class="dot ride"></i> Ride / run</span>
+    <span><i class="dot social"></i> Social / hospitality</span>
+    <span><i class="dot key"></i> Key activation</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- MONDAY -->
+    <div class="day">
+      <div class="dhead"><div class="dname">Mon</div><div class="ddate">5 Oct</div></div>
+      <div class="dbody">
+        <div class="ev swim"><span class="t">07:00&ndash;09:00</span><span class="n">Morning swim</span> Daily open water, kayak support for first-timers.</div>
+        <div class="ev social"><span class="t">All day</span><span class="n">Cookies</span> House opening / drop-in.</div>
+      </div>
+    </div>
+
+    <!-- TUESDAY -->
+    <div class="day">
+      <div class="dhead"><div class="dname">Tue</div><div class="ddate">6 Oct</div></div>
+      <div class="dbody">
+        <div class="ev swim"><span class="t">07:00&ndash;09:00</span><span class="n">Morning swim</span></div>
+        <div class="ev social"><span class="t">Afternoon</span><span class="n">Pizza game + shakeout run</span> Team arrivals; casual run.</div>
+        <div class="ev social"><span class="t">Evening</span><span class="n">Parade of Nations</span> No competing event.</div>
+      </div>
+    </div>
+
+    <!-- WEDNESDAY -->
+    <div class="day">
+      <div class="dhead"><div class="dname">Wed</div><div class="ddate">7 Oct</div></div>
+      <div class="dbody">
+        <div class="ev swim"><span class="t">07:00&ndash;09:00</span><span class="n">Morning swim</span></div>
+        <div class="ev ride"><span class="t">09:30</span><span class="n">Coffee ride</span> Scenic viewpoint route, support car on call.</div>
+        <div class="ev big"><span class="t">Primary day</span><span class="n">Big house event</span> Anchor activation around race briefings.</div>
+      </div>
+    </div>
+
+    <!-- THURSDAY -->
+    <div class="day">
+      <div class="dhead"><div class="dname">Thu</div><div class="ddate">8 Oct</div></div>
+      <div class="dbody">
+        <div class="ev swim"><span class="t">07:00&ndash;09:00</span><span class="n">Morning swim</span></div>
+        <div class="ev ride"><span class="t">09:30</span><span class="n">Coffee ride</span> Final formal shakeout + tech talk.</div>
+        <div class="ev social"><span class="t">Evening</span><span class="n">Welcome Banquet</span> No competing event.</div>
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div class="day">
+      <div class="dhead"><div class="dname">Fri</div><div class="ddate">9 Oct</div></div>
+      <div class="dbody">
+        <div class="ev swim"><span class="t">07:00&ndash;09:00</span><span class="n">Morning swim</span></div>
+        <div class="ev social"><span class="t">Note</span><span class="n">Bike check-in</span> Keep AM clear of ride conflicts.</div>
+        <div class="ev key"><span class="t">Pep talk</span><span class="n">Final pep talk</span> Potentially w/ Laura Siddall.</div>
+      </div>
+    </div>
+
+    <!-- SATURDAY / RACE -->
+    <div class="day race">
+      <div class="dhead"><div class="dname">Sat</div><div class="ddate">10 Oct</div></div>
+      <div class="dbody">
+        <div class="ev key"><span class="t">Race day</span><span class="n">IRONMAN World Champs</span></div>
+        <div class="ev key"><span class="t">Venue</span><span class="n">View party</span> Families &amp; supporters at the Faster House.</div>
+      </div>
+    </div>
+
+    <!-- SUNDAY -->
+    <div class="day">
+      <div class="dhead"><div class="dname">Sun</div><div class="ddate">11 Oct</div></div>
+      <div class="dbody">
+        <div class="ev ride"><span class="t">08:00&ndash;12:00</span><span class="n">Recovery meet</span> Post-race coffee ride + optional 5K.</div>
+        <div class="ev social"><span class="t">Note</span><span class="n">Capture before departure</span> Last athlete touchpoint.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="note">
+    <b>Draft schedule.</b> Times and events are provisional and to be confirmed against the official Ironman timetable.
+    Morning swims run daily 07:00&ndash;09:00 from Monday. Coffee rides start 09:30 after the swim.
+    Edit this file to update; changes go live once pushed to the repo.
+  </p>
+</div>
+</body>
+</html>
